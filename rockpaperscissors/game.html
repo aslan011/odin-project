@@ -6,31 +6,77 @@
 </head>
 
 <body>
+    <div id = "buttons">
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
+    </div>
+    <div id="score">You 0:0 Computer</div>
+    <div id="msg">Let's play!</div>
+    <button id="reset" style="visibility: hidden;">Play again?</button>
+    
     <script>
         let cRounds = 0;
         let pRounds = 0;
+
+        const buttons = document.querySelectorAll("button");
+		const score = document.querySelector("#score");
+		const msg = document.querySelector("#msg");
+
+        function displayResult(e){
+            let result = playRound(e.target.id, computerPlay())
+            if (result.search("You Win")){
+                pRounds++ 
+                msg.textContent = result;
+                score.textContent = `You ${pRounds}:${cRounds} Computer`
+                if (pRounds == 5){
+                    result = "You win the game!"
+                    msg.textContent = result;
+                    document.getElementById("buttons").style.visibility= "hidden";
+                    document.getElementById("reset").style.visibility= "visible";
+                } 
+
+            }
+            else if (result.search("Lose")){
+                cRounds++
+                msg.textContent = result;
+                score.textContent = `You ${pRounds}:${cRounds} Computer`
+                if (cRounds ==  5){
+                    result = "You lose the game!"
+                    msg.textContent = result;
+                    document.getElementById("buttons").style.visibility= "hidden";
+                    document.getElementById("reset").style.visibility= "visible";
+                }   
+            }
+        }
+
+        function resetAll(){
+            pRounds = 0;
+            cRounds = 0;
+            document.getElementById("buttons").style.visibility = "visible"
+            document.getElementById("reset").style.visibility = "hidden"
+            document.getElementById("msg").textContent = "Let's play!"
+            document.getElementById("score").textContent = "You 0:0 Computer"
+        }
+
         function computerPlay() {
-            let selection = ["Rock", "Paper", "Scissors"]
+            let selection = ["rock", "paper", "scissors"]
             let randomSelection = Math.floor(Math.random()*selection.length);
             return selection[randomSelection];
         }
-
         function playRound(playerSelection, computerSelection) {
-                 player = playerSelection.toLowerCase()
-                 computer = computerSelection.toLowerCase()
-                 if (player == computer){
+                 if (playerSelection == computerSelection){
                      return "Draw"}
-                 else if (player == "rock" && computer == "scissors"){
+                 else if (playerSelection == "rock" && computerSelection == "scissors"){
                      return "You Win! Rock beats Scisccors";}
-                 else if (player == "scissors" && computer == "paper"){
+                 else if (playerSelection == "scissors" && computerSelection == "paper"){
                      return "You Win! Scissors beats Paper!";}
-                 else if (player == "paper" && computer== "rock"){
+                 else if (playerSelection == "paper" && computerSelection == "rock"){
                      return "You Win! Paper beats Rock";}
                  else {
-                     return `You Lose! ${computer} beats ${player}`
+                     return `You Lose! ${computerSelection} beats ${playerSelection}`
                  }
         }
-
         function game() {
             let pSelect = prompt("What do you choose?");
             let cSelect = computerPlay();
@@ -45,8 +91,17 @@
             else if (cRounds == 5){
                         console.log("Sorry, you lost!")}
             
-            
         }
+
+        document.getElementById("rock").addEventListener("click", displayResult);
+
+        document.getElementById("paper").addEventListener("click", displayResult);
+
+        document.getElementById("scissors").addEventListener("click", displayResult);
+
+        document.getElementById("reset").addEventListener("click",resetAll);
+
+       
         
 
 
