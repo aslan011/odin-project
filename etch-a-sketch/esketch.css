@@ -1,0 +1,32 @@
+.squares {
+    height: auto;
+    width: auto;
+    border: 0.1px solid gray; 
+    
+}  
+
+#container {
+    display: grid ;
+    grid-template-columns: repeat(16,1fr);
+    grid-template-rows: repeat(16,1fr);
+    height: 600px;
+    width: 600px;
+    border: solid blue;
+    margin: 100px auto; 
+     
+}
+
+h1 {
+    color: hotpink;
+    text-align: center;
+    top: 50px;
+
+}
+
+#clearAll {
+    color: indigo;
+    left: 45%;
+    top: 10%;
+    position: absolute;
+    background-color: lightcoral;
+}
