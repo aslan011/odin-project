@@ -1,0 +1,1 @@
+Exercises from The Odin Project - first experience with learning coding!
