@@ -25,7 +25,7 @@
 
         function displayResult(e){
             let result = playRound(e.target.id, computerPlay())
-            if (result.search("You Win")){
+            if (result.includes("You Win")){
                 pRounds++ 
                 msg.textContent = result;
                 score.textContent = `You ${pRounds}:${cRounds} Computer`
@@ -37,7 +37,7 @@
                 } 
 
             }
-            else if (result.search("Lose")){
+            else if (result.includes("Lose")){
                 cRounds++
                 msg.textContent = result;
                 score.textContent = `You ${pRounds}:${cRounds} Computer`
@@ -48,6 +48,10 @@
                     document.getElementById("reset").style.visibility= "visible";
                 }   
             }
+            else {
+                msg.textContent = result;
+                score.textContent = `You ${pRounds}:${cRounds} Computer`
+            };
         }
 
         function resetAll(){
@@ -77,7 +81,7 @@
                      return `You Lose! ${computerSelection} beats ${playerSelection}`
                  }
         }
-        function game() {
+       /*  function game() {
             let pSelect = prompt("What do you choose?");
             let cSelect = computerPlay();
             let roundResult = playRound(pSelect,cSelect);
@@ -92,7 +96,7 @@
                         console.log("Sorry, you lost!")}
             
         }
-
+ */
         document.getElementById("rock").addEventListener("click", displayResult);
 
         document.getElementById("paper").addEventListener("click", displayResult);
