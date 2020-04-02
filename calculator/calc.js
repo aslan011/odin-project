@@ -34,4 +34,22 @@ function operator (a, b, op){
 	console.log(result)
 }
 
-operator(2,3,"")
+function numberSelect(n){
+	let button = document.getElementById("display");
+	button.textContent += n;
+	
+}
+
+function operatorSelect(n){
+	let operator = document.getElementById("display");
+	operator.textContent += ` ${n} `;
+}
+
+function equals(){
+	let calculation = document.getElementById("display");
+	let currentCalc = calculation.textContent.split(" ");
+	calculation.textContent += " =";
+	console.log(currentCalc);
+
+}
+

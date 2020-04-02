@@ -8,26 +8,26 @@
 <body>
     <script src="calc.js"></script>
     <div id="container">
-        <div id="display">95059</div>
+        <div id="display"></div>
         <div id="numbers">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
+            <button value=1 onclick="numberSelect(this.value)">1</button>
+            <button value=2 onclick="numberSelect(this.value)">2</button>
+            <button value=3 onclick="numberSelect(this.value)">3</button>
+            <button value=4 onclick="numberSelect(this.value)">4</button>
+            <button value=5 onclick="numberSelect(this.value)">5</button>
+            <button value=6 onclick="numberSelect(this.value)">6</button>
+            <button value=7 onclick="numberSelect(this.value)">7</button>
+            <button value=8 onclick="numberSelect(this.value)">8</button>
+            <button value=9 onclick="numberSelect(this.value)">9</button>
         </div>
         <div id="operators">
-            <button>+</button>
-            <button>-</button>
-            <button>/</button>
-            <button>*</button>
+            <button value="+" onclick="operatorSelect(this.value)">+</button>
+            <button value="-" onclick="operatorSelect(this.value)">-</button>
+            <button value="/" onclick="operatorSelect(this.value)">/</button>
+            <button value="*" onclick="operatorSelect(this.value)">*</button>
         </div>
         <div id="equalsClear">
-            <button>=</button>
+            <button onclick="equals()">=</button>
             <button>Clear</button>
         </div>
 
