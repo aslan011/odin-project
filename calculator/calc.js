@@ -69,7 +69,10 @@ function numberSelect(n){
 }
 
 function operatorSelect(n){
-	if (currentNumber == null){
+	if (currentNumber !== null && nextNumber !== null){
+		equals()
+	}
+	else if (currentNumber == null){
 		return;
 	}
 	else{
