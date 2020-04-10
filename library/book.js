@@ -18,24 +18,29 @@ function addBookToLibrary(title, author, pages, read){
         
 }
 
-function checkDup(){
-    myLibrary.forEach(function(item){
-        
-    }
-)}
-
 function render() {
     const div = document.createElement("div")
+    const button = document.createElement("button")
     myLibrary.forEach(function(item){
     div.className = "books";
+    button.className = "removeButton"
+    button.textContent = "Remove"
+    div.dataset.index = (myLibrary.length -1);
     div.innerHTML = 
             `<h1>${item.title}<h1> 
             <h2>${item.author}<h2>
             <h3>${item.pages}<h3>
             <h4>${item.read}<h4>`
-    container.appendChild(div)}
+    container.appendChild(div)
+    div.appendChild(button)}
     
 )}
+
+function removeBook (e){
+    let thisBook = this.parentNode.dataset.index;
+    myLibrary.pop()
+    render()
+}
 
 function newBook() {
     document.getElementById("form").style.display = "block";
@@ -53,4 +58,10 @@ function addBook() {
     
 }
 
-addBookToLibrary("Lord of the Rings", "this guy", "348", "read")
+addBookToLibrary("lords of rhins", "henry", "48558", "read")
+addBookToLibrary("lords of rhins", "henry", "48558", "read")
+addBookToLibrary("lords of rhins", "henry", "48558", "read")
+
+//something is wrong with the below
+const buttons = Array.from(document.querySelectorAll('.removeButton'));
+buttons.forEach(book => book.addEventListener("click", removeBook));

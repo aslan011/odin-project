@@ -17,8 +17,6 @@
 .books {
     flex-direction: row;
     border: solid black;
-    padding: 10px;
-    margin: 20px;
     width: 150px;
     height: 200px;
     line-height: 25px;
@@ -34,6 +32,18 @@ form {
     display: none;
     
 }
+
+.removeButton {
+    width: 40%;
+    height: 20px;
+    border-radius: 50px;
+    position: relative;
+    left:50%;
+    bottom: 2%;
+    font-size: 8pt;
+
+}
+
 
 h1 {
     font-size: 16pt;
