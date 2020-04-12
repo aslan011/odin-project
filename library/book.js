@@ -18,13 +18,28 @@ function addBookToLibrary(title, author, pages, read){
         
 }
 
+function toggleRead(index, e){
+    if(myLibrary[index]["read"] == "Read?"){
+        myLibrary[index]["read"] = "Read"
+        e.innerHTML = "Read"
+    }
+    else {
+        myLibrary[index]["read"] = "Read?"
+        e.innerHTML = "Read?"
+    }
+
+}
+
 function render() {
     const div = document.createElement("div")
     const button = document.createElement("button")
+    const read = document.createElement("button")
     myLibrary.forEach(function(item){
     div.className = "books";
     button.className = "removeButton"
     button.textContent = "Remove"
+    read.className = "readToggle"
+    read.textContent = "Read?"
     div.dataset.index = (myLibrary.length -1);
     div.innerHTML = 
             `<h1>${item.title}<h1> 
@@ -32,14 +47,23 @@ function render() {
             <h3>${item.pages}<h3>
             <h4>${item.read}<h4>`
     container.appendChild(div)
-    div.appendChild(button)}
+    div.appendChild(button)
+    div.appendChild(read)}
     
 )}
 
-function removeBook (e){
-    let thisBook = this.parentNode.dataset.index;
-    myLibrary.pop()
-    render()
+function removeBook (index){
+    myLibrary.splice(index,1);
+    const div = Array.from(document.getElementsByClassName("books"))
+    div.map(function(item){
+        if (item.dataset.index === index) {
+            container.removeChild(item)
+        }})
+    div.forEach(function(item){
+        if (item.dataset.index > index) {
+            item.dataset.index -= 1
+        }})
+  
 }
 
 function newBook() {
@@ -48,20 +72,25 @@ function newBook() {
 }
 
 function addBook() {
-    titl = document.getElementById("title").value
-    autho = document.getElementById("author").value
+    title = document.getElementById("title").value
+    author = document.getElementById("author").value
     page = document.getElementById("pages").value
-    rea = document.getElementById("read").value
-    addBookToLibrary(titl, autho, page, rea)
+    if (document.getElementById("read").checked == true){
+        read = "read"}
+    else {read = "Not read"}
+    addBookToLibrary(title, author, page, read)
     document.getElementById("form").style.display = "none";
     document.getElementById("newBook").style.display = "block";
     
 }
 
-addBookToLibrary("lords of rhins", "henry", "48558", "read")
-addBookToLibrary("lords of rhins", "henry", "48558", "read")
-addBookToLibrary("lords of rhins", "henry", "48558", "read")
+const parent = document.getElementById("container")
+    parent.addEventListener("click", event => {
+        if (event.target.className === "removeButton") {
+            removeBook(event.target.parentNode.dataset.index)
+        }
 
-//something is wrong with the below
-const buttons = Array.from(document.querySelectorAll('.removeButton'));
-buttons.forEach(book => book.addEventListener("click", removeBook));
+        else if (event.target.className === "readToggle") {
+            toggleRead(event.target.parentNode.dataset.index, event.target)
+        }
+})
