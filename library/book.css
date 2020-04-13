@@ -1,14 +1,16 @@
 #container {
     display: flex;
     flex-wrap: wrap;
-    width:75%;
-    border: solid black;
+    width:82%;
+    border: solid rgba(209, 190, 190, 0.253);
+    background: rgba(90, 140, 197, 0.274);
+    border-radius: 25px;
+    padding: 5px;
 }
 
 #panel {
     height: 100%;  
-    width: 20%;;
-    border: solid blue;
+    width: 10%;
     position: absolute;
     right:40px;
     top:7.5px;
@@ -16,21 +18,36 @@
 
 .books {
     flex-direction: row;
-    border: solid black;
+    border: solid rgb(46, 45, 45);
     width: 150px;
     height: 200px;
     line-height: 25px;
     border-radius: 20pt;
-    background-color: grey;
+    background-color: rgba(245, 243, 243, 0.678);
+    margin: 10px;
+    padding:3px;
 }
 
-form {
-    width: 20%;
+#form {
     position: absolute;
-    right:40px;
-    top:200px;
+    left:84%;
+    top:150px;
     display: none;
     
+}
+
+#title #author #pages input{
+    width: 5em;
+}
+
+#read {
+    position: relative;
+    text-align: center;
+}
+
+label {
+    font-size: 9pt;
+    width:40px;
 }
 
 .removeButton {
@@ -38,9 +55,13 @@ form {
     height: 20px;
     border-radius: 50px;
     position: relative;
-    top: 80px;
-    left: 10px;
+    top: -10px;
+    left: 5px;
     font-size: 8pt;
+    color: black;
+    font-family: Calibri;
+    background-color: rgba(128, 128, 128, 0.438);
+    border:none;
 
 }
 
@@ -49,24 +70,69 @@ form {
     height: 20px;
     border-radius: 50px;
     position: relative;
-    top: 80px;
-    left: 20px;
+    top: -10px;
+    left: 25px;
     font-size: 8pt;
+    margin:5px;
+    color: black;
+    font-family: Calibri;
+    background-color: rgba(128, 128, 128, 0.438);
+    border: none;
+}
+
+#newBook {
+    height: 50px;
+    width: 120px;
+    position: relative;
+    top: 30px;
+    left: 20%;
+    background-color: rgb(47, 130, 255);
+    border: none;
+    border-radius: 20px;
+
+}
+
+#addBook {
+    height: 50px;
+    width: 120px;
+    position: relative;
+    top: 30px;
+    left: 10%;
+    background-color: rgb(47, 130, 255);
+    border: none;
+    border-radius: 20px;
 }
 
 
 h1 {
-    font-size: 16pt;
+    font-size: 14pt;
+    color: rgb(58, 63, 63);
+    font-family: Calibri;
+    padding-left: 5px;
+    padding-right: 5px;
+    word-wrap: break-word;
 }
 
 h2 { 
     font-size: 12pt;
+    color: rgb(58, 63, 63);
+    font-family: Calibri;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 h3 {
     font-size: 8pt;
+    color: rgb(58, 63, 63);
+    font-family: Calibri;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 h4 {
     font-size: 8pt;
+    color: rgb(58, 63, 63);
+    font-family: Calibri;
+    padding-left: 5px;
+    padding-right: 5px;
 }

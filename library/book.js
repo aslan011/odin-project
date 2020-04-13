@@ -19,15 +19,14 @@ function addBookToLibrary(title, author, pages, read){
 }
 
 function toggleRead(index, e){
-    if(myLibrary[index]["read"] == "Read?"){
+    if (myLibrary[index]["read"] == "Not read"){
         myLibrary[index]["read"] = "Read"
         e.innerHTML = "Read"
     }
     else {
-        myLibrary[index]["read"] = "Read?"
+        myLibrary[index]["read"] = "Not read"
         e.innerHTML = "Read?"
     }
-
 }
 
 function render() {
@@ -39,13 +38,15 @@ function render() {
     button.className = "removeButton"
     button.textContent = "Remove"
     read.className = "readToggle"
+    if (item.read == "Not read"){
     read.textContent = "Read?"
+    }
+    else {read.textContent = "Read"}
     div.dataset.index = (myLibrary.length -1);
     div.innerHTML = 
             `<h1>${item.title}<h1> 
             <h2>${item.author}<h2>
-            <h3>${item.pages}<h3>
-            <h4>${item.read}<h4>`
+            <h3>${item.pages} pages<h3>`
     container.appendChild(div)
     div.appendChild(button)
     div.appendChild(read)}
@@ -63,12 +64,11 @@ function removeBook (index){
         if (item.dataset.index > index) {
             item.dataset.index -= 1
         }})
-  
 }
 
 function newBook() {
     document.getElementById("form").style.display = "block";
-    document.getElementById("newBook").style.display = "none";
+    document.getElementById("addBook").style.display = "none";
 }
 
 function addBook() {
@@ -76,13 +76,33 @@ function addBook() {
     author = document.getElementById("author").value
     page = document.getElementById("pages").value
     if (document.getElementById("read").checked == true){
-        read = "read"}
+        read = "Read"}
     else {read = "Not read"}
     addBookToLibrary(title, author, page, read)
     document.getElementById("form").style.display = "none";
-    document.getElementById("newBook").style.display = "block";
-    
+    document.getElementById("addBook").style.display = "block"; 
+    clearFields()   
 }
+
+function clearFields(){
+    document.getElementById("title").value = ""
+    document.getElementById("author").value = ""
+    document.getElementById("pages").value = ""
+}
+
+addBookToLibrary("Open veins of South America", "Some guy", "456 pages")
+addBookToLibrary("Open veins of South America", "Some guy", "456 pages")
+addBookToLibrary("Open veins of South America", "Some guy", "456 pages")
+addBookToLibrary("PRisoners of Georgrpahy", "Some guy", "456 pages")
+addBookToLibrary("Open veins of South America", "Some guy", "456 pages")
+addBookToLibrary("Open veins of South America", "Some guy", "456 pages")
+addBookToLibrary("Open veins of South America", "Some guy", "456 pages")
+addBookToLibrary("Oh dearrrrrr", "Some guy", "456 pages")
+addBookToLibrary("58573739", "Some guy", "456 pages")
+addBookToLibrary("48 laws of power", "Some guy", "456 pages")
+addBookToLibrary("The subtle art of not", "Some guy", "456 pages")
+addBookToLibrary("How to run away from People", "Some guy", "456 pages")
+render()
 
 const parent = document.getElementById("container")
     parent.addEventListener("click", event => {
