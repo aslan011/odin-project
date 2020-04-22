@@ -1,0 +1,47 @@
+#container {
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px;
+    width: 450px;
+    height: 450px;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 5%;
+    border: solid green;
+    border-radius: 25px;
+    overflow: hidden;
+
+}
+
+.symbols {
+    font-size: 100pt;
+    text-align: center;
+    color: blanchedalmond;
+
+}
+
+.symbols:nth-child(odd){
+    background-color:rgb(128, 128, 128);
+}
+
+.symbols:nth-child(even){
+    background-color: rgba(0, 0, 0, 0.884);
+}
+
+#p1Name {
+    position: absolute;
+    left: 15%;
+    top: 20%;
+}
+
+#p2Name {
+   position: absolute;
+   left: 80%; 
+   top: 20%;
+}
+
+button {
+    position: relative;
+    left:46%;
+    margin: 10px;
+}
