@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Todo list</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        <div id="container">
+            <div id="leftContent">
+                <h2>Projects</h2>
+                <ul>
+                    <li>Checking</li>
+                </ul>
+            </div>
+            <div id="mainContent">
+                <h2>Tasks</h2>
+                <ul id="list">
+                    <li>Checking</li>
+                </ul>
+                <form>
+                    <input id="text" type="text" name="text" placeholder="New task title"> <button id="newTask" type="button">+</button>
+                   </form>
+            </div>
+            <div id="popupBox">
+                <p id="p"></p><button>Edit name</button id="editName"><br>
+                <input id="date" type="date">
+                <label for="priority">Priority</label>
+                <select name="priority" id = "priority">
+                    <option value="none" selected disabled hidden>Choose here</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+                <textarea id="textArea" placeholder="Description"></textarea>
+                <button id="addDetails">Finish</button>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="main.js"></script>
+</html>

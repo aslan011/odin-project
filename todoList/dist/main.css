@@ -1,0 +1,46 @@
+#container {
+    display: flex;
+}
+
+#leftContent {
+    width: 300px;
+    margin: 50px;
+}
+
+#mainContent {
+    width: 500px;
+    margin:60px;
+}
+
+#newTask {
+    border: none;
+}
+
+#popupBox {
+    position: absolute;
+    width: 500px;
+    height: 280px;
+    border: solid green;
+    left: 35%;
+    top:30%;
+    padding:25px;
+    visibility: hidden;
+    background-color: grey;
+}
+
+#textArea {
+    height:100px;
+    width:500px;
+}
+
+#p {
+    background-color: transparent;
+    border: solid red;
+    resize: none;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.tasks:hover {
+    border: solid blue;
+}
