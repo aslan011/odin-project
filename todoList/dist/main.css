@@ -41,6 +41,12 @@
     font-weight: bold;
 }
 
+.tasks {
+    display: flex;
+    width:1000px;
+    justify-content: space-between;
+}
+
 .tasks:hover {
     border: solid blue;
 }

@@ -9,18 +9,21 @@
         <div id="container">
             <div id="leftContent">
                 <h2>Projects</h2>
-                <ul>
-                    <li>Checking</li>
+                <ul id="projectList">
+                    <li class="projects">General</li>
                 </ul>
+                <form>
+                    <input id="projectName" type="text" name="newProject" placeholder="New project"> <button id="newProject" type="button">+</button>
+                </form>
             </div>
             <div id="mainContent">
-                <h2>Tasks</h2>
+                <h2 id="projectTitle">General</h2>
                 <ul id="list">
-                    <li>Checking</li>
                 </ul>
                 <form>
                     <input id="text" type="text" name="text" placeholder="New task title"> <button id="newTask" type="button">+</button>
-                   </form>
+                </form>
+                    <button id="deleteProject" type="button">Delete project</button>
             </div>
             <div id="popupBox">
                 <p id="p"></p><button>Edit name</button id="editName"><br>
@@ -34,6 +37,7 @@
                 </select>
                 <textarea id="textArea" placeholder="Description"></textarea>
                 <button id="addDetails">Finish</button>
+                <button id="deleteTask">Delete task</button>
             </div>
         </div>
     </body>
