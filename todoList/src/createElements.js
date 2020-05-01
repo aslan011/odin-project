@@ -64,7 +64,7 @@ function resetPopupBox(){
 }
 
 function selectGeneral (){
-    projectTitle.textContent = "general";
+    projectTitle.textContent = "General";
 }
 
 export {appendTask}
