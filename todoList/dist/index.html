@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="main.css">
     </head>
     <body>
+        <header id="header">ToDo list</header>
         <div id="container">
             <div id="leftContent">
                 <h2>Projects</h2>
@@ -13,7 +14,7 @@
                     <li class="projects">General</li>
                 </ul>
                 <form>
-                    <input id="projectName" type="text" name="newProject" placeholder="New project"> <button id="newProject" type="button">+</button>
+                    <button id="newProject" type="button">+</button><input class="newForms" id="projectName" type="text" name="newProject" placeholder="New project">
                 </form>
             </div>
             <div id="mainContent">
@@ -21,23 +22,26 @@
                 <ul id="list">
                 </ul>
                 <form>
-                    <input id="text" type="text" name="text" placeholder="New task title"> <button id="newTask" type="button">+</button>
+                    <button id="newTask" type="button">+</button><input class="newForms" id="text" type="text" name="text" placeholder="New task title">
                 </form>
-                    <button id="deleteProject" type="button">Delete project</button>
+                    <button class = "popupButtons" id="deleteProject" type="button">Delete project</button>
             </div>
             <div id="popupBox">
-                <p id="p"></p><button>Edit name</button id="editName"><br>
+                <p id="p"></p>
+                <div id="dropDownDate">
                 <input id="date" type="date">
-                <label for="priority">Priority</label>
-                <select name="priority" id = "priority">
-                    <option value="none" selected disabled hidden>Choose here</option>
-                    <option value="High">High</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Low">Low</option>
-                </select>
+                <div class="dropDown">
+                    <label for="priority">Priority</label>
+                    <select name="priority" id = "priority">
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+                </div>
                 <textarea id="textArea" placeholder="Description"></textarea>
-                <button id="addDetails">Finish</button>
-                <button id="deleteTask">Delete task</button>
+                <button class = "popupButtons" id="addDetails">Finish</button>
+                <button class = "popupButtons" id="deleteTask">Delete task</button>
             </div>
         </div>
     </body>

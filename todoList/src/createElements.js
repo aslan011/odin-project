@@ -21,13 +21,14 @@ function appendTask(){
             task.id = text;
             task.className = "tasks";
             date.className = "dates"
-            if (object.priority == "High"){task.style.backgroundColor = "red"}
-            else if (object.priority == "Medium") {task.style.backgroundColor = "orange"}
+            if (object.priority == "High"){task.style.backgroundColor = "rgba(250, 64, 64, 0.699)"}
+            else if (object.priority == "Medium") {task.style.backgroundColor = "rgba(253, 179, 40, 0.726)"}
             list.appendChild(task);
             task.appendChild(date)
         }
     }) 
     document.getElementById("text").value = "";
+    
 }
 
 function appendProject(){
@@ -45,8 +46,9 @@ function appendProject(){
 
 function popupBoxAppear(task){
     popupBox.style.visibility = "visible";
-    popupBox.querySelector("#p").textContent= task;
-    const taskArray = tasks.find(item => item.title ==  task)
+    popupBox.querySelector("#p").textContent = task;
+    const project = document.querySelector("#projectTitle").textContent;
+    const taskArray = tasks.find(item => item.title ==  task && item.project == project)
     const description = taskArray.description;
     const date = taskArray.date;
     const priority = taskArray.priority;

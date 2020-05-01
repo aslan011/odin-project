@@ -5,13 +5,13 @@ import {addMoreDetails} from "./addMoreDetails";
 import {projectPage} from "./projectPage";
 import {deleteProject} from "./newTodo"
 
-new newTask("CHECK", "that", "27/5/4", "who", "General");
-new newTask("this is in general 2 capssss", "that", "what", "who", "General");
-new newTask("this is in general 3", "that", "what", "who", "general");
-new newTask("this is in general 4", "that", "what", "who", "general");
-new newTask("this is in test", "that", "what", "who", "test");
-new newTask("this is in test", "that", "what", "who", "test");
-new newTask("this is in test", "that", "what", "who", "test");
+new newTask("Just an example of High priority", "", "", "High", "General");
+new newTask("Another example with medium priority", "", "", "Medium", "General");
+new newTask("Med with a date", "", "01/01/2021", "Medium", "General");
+new newTask("Low priority", "", "", "Low", "General");
+new newTask("No priority set, same as Low", "", "", "", "General");
+
+
 
 appendTask();
 appendProject();

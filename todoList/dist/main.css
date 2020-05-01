@@ -1,29 +1,74 @@
+@font-face {
+    font-family: Quicksand;
+    src: url("Quicksand-Regular.otf");
+}
+
+html, body {
+    margin: 0px;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    background-color: rgb(55, 161, 180);
+    font-family: Quicksand;
+    font-size: xx-large;
+}
+
+
 #container {
     display: flex;
+    font-family: Quicksand;
+    color: turquoise;
 }
 
 #leftContent {
-    width: 300px;
-    margin: 50px;
+    width: 350px;
+    padding: 50px;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.712);
 }
 
 #mainContent {
-    width: 500px;
-    margin:60px;
+    width: 100vw;
+    padding:60px;
+    background-color: rgba(58, 88, 85, 0.753);
 }
 
-#newTask {
+button {
     border: none;
+    background-color: transparent;
+    font-size: larger;
+    color: whitesmoke;
+}
+
+.popupButtons {
+    font-size: medium;
+    background-color: rgb(100, 180, 172);
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.newForms {
+    background-color: transparent;
+    border: none;
+    border-radius: 2px;
+    color: whitesmoke;
+    font-size: medium;
 }
 
 #popupBox {
     position: absolute;
     width: 500px;
-    height: 280px;
-    border: solid green;
+    height: 250px;
+    border: none;
+    border-radius: 5px;
     left: 35%;
     top:30%;
-    padding:25px;
+    padding:15px;
     visibility: hidden;
     background-color: grey;
 }
@@ -31,22 +76,63 @@
 #textArea {
     height:100px;
     width:500px;
+    resize: none;
+    font-family: Quicksand;
+    border-radius: 5px;
+}
+
+.dropDown option {
+    background-color: whitesmoke;
+}
+
+#dropDownDate {
+    display: flex;
+    margin-bottom: 10px;
+    vertical-align: middle;
 }
 
 #p {
     background-color: transparent;
-    border: solid red;
     resize: none;
-    font-size: 14pt;
+    font-size: larger;
     font-weight: bold;
+    padding: 0px;
+    margin: 10px;
+}
+
+#date {
+    margin-right: 10px;
+    border-radius: 5px;
+    font-family: Quicksand;
+}
+
+#priority {
+    border-radius: 5px;
+    background-color: whitesmoke;
 }
 
 .tasks {
     display: flex;
     width:1000px;
     justify-content: space-between;
+    color: whitesmoke;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.projects:hover {
+    border: solid thin whitesmoke;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 .tasks:hover {
-    border: solid blue;
+    border: solid thin whitesmoke;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#projectName {
+    width: 200px;
 }
