@@ -72,23 +72,41 @@ function newBook() {
 }
 
 function addBook() {
-    title = document.getElementById("title").value
-    author = document.getElementById("author").value
-    page = document.getElementById("pages").value
+    const form = document.getElementById("form");
+    if (form.checkValidity()){
+    const title = document.getElementById("title").value
+    const author = document.getElementById("author").value
+    const page = document.getElementById("pages").value
     if (document.getElementById("read").checked == true){
         read = "Read"}
     else {read = "Not read"}
     addBookToLibrary(title, author, page, read)
     document.getElementById("form").style.display = "none";
     document.getElementById("addBook").style.display = "block"; 
-    clearFields()   
+    clearFields()
+}
+    else if (!title.checkValidity()){
+        document.getElementById("title").placeholder = "Please enter a title";
+    }
+
+    else if (!author.checkValidity()){
+        document.getElementById("author").placeholder = "Please enter an author name";
+    }
+
+    else {
+        document.getElementById("pages").placeholder = "Please enter number of pages";
+        document.getElementById("pages").value = "";
+    }
 }
 
 function clearFields(){
     document.getElementById("title").value = ""
     document.getElementById("author").value = ""
     document.getElementById("pages").value = ""
+    
 }
+
+clearFields();
 
 addBookToLibrary("Open veins of South America", "Some guy", "456 pages")
 addBookToLibrary("Open veins of South America", "Some guy", "456 pages")
