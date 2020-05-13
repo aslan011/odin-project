@@ -1,0 +1,19 @@
+
+input {
+    width: 300px;
+}
+
+label {
+    margin-top: 30px;
+}
+
+button {
+    width: 150px;
+    margin-top: 30px;
+}
+
+.error {
+    font-size: smaller;
+    color: red;
+    visibility: hidden;
+}

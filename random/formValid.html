@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./formValid.css">
+        <title>Form validation</title>
+    </head>
+    <body>
+        <form novalidate id="form">
+            <label for="email">Email</label>
+            <input type="email" required id="email"> 
+            <span id="emailError" class="error">Please enter an email</span><br><br>
+            <label for="country">Country</label>
+            <input type="text" required id="country">
+            <span id="countryError" class="error">Please enter a country</span><br><br>
+            <label for="postcode">Postcode</label>
+            <input type="text" required id="postcode">
+            <span id="postcodeError" class="error">Please enter a postcode</span><br><br>
+            <label for="password">Password</label>
+            <input type="text" required minlength="8" id="password">
+            <span id="passwordError" class="error">Please enter a password with atleast 8 characters</span><br><br>
+            <button id='submit' type="submit">Submit</button>
+        </form>
+        <script type="text/javascript" src="./formValid.js"></script>
+    </body>
+</html>
+
+
