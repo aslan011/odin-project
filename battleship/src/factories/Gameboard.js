@@ -1,15 +1,7 @@
-import { Ship } from './Ship';
-
 const Gameboard = () => {
   let index = 1;
   const grid = [];
-  const Ships = [
-    Ship('3', ['F5', 'F6', 'F7']),
-    Ship('4', ['J7', 'J8', 'J9', 'J10']),
-    Ship('4', ['J7', 'J8', 'J9', 'J10']),
-    Ship('4', ['J7', 'J8', 'J9', 'J10']),
-    Ship('4', ['C1', 'C2', 'C3'])
-  ];
+  const Ships = [];
 
   const missedPositions = [];
 

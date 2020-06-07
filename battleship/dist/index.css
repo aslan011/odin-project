@@ -1,0 +1,50 @@
+#container {
+    display: flex;
+    flex-direction: row;
+}
+
+.squares {
+    height: auto;
+    width: auto;
+    border: 0.1px solid gray; 
+}  
+
+.COMsquares {
+    height: auto;
+    width: auto;
+    border: 0.1px solid gray; 
+}  
+
+#player {
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(10,1fr);
+    height: 400px;
+    width: 400px;
+    border: solid blue;
+    margin: 20px;
+     
+}
+
+#computer {
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(10,1fr);
+    height: 400px;
+    width: 400px;
+    border: solid blue;
+    margin: 20px;
+     
+}
+
+.containShip {
+    background-color: chartreuse;
+}
+
+.hitEmpty {
+    background-color: blue
+}
+
+.hitShip {
+    background-color: coral;
+}
