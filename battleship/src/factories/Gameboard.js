@@ -31,7 +31,6 @@ const Gameboard = () => {
 
   const placeShips = () => {
     const allShipPositions = getAllShipPositons();
-
     grid.forEach(square => {
       const { cords } = square;
       if (allShipPositions.includes(cords)) {

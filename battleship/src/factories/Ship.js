@@ -1,5 +1,4 @@
-const Ship = (length, positions) => {
-  const Length = length;
+const Ship = positions => {
   const Positions = [...positions];
   const hitPositions = [];
   let isSunk = false;
@@ -20,11 +19,10 @@ const Ship = (length, positions) => {
     return false;
   };
 
-  const getLength = () => Length;
   const getPositions = () => Positions;
   const getHitPositions = () => hitPositions;
 
-  return { hit, getLength, sink, getPositions, getHitPositions };
+  return { hit, sink, getPositions, getHitPositions };
 };
 
 // eslint-disable-next-line import/prefer-default-export

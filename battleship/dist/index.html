@@ -7,9 +7,29 @@
     </head>
     <body>
         <div id='container'>
-            <div id='player'></div>
-            <div id='computer'></div>
+            <h2>Your gameboard</h2>
+            <h2>Computer's gameboard</h2>
+            <div id='player'>
+            </div>
+            <div id='computer'>
+            </div>
         </div>
+        <div id='formDiv'>
+            <p id='remainingShips'>Add some Ships! 4 remaining...</p>
+        <form>
+            <p id='length'>This ship length is 4</p>
+            <label for='cords'>Cordinates</label>
+            <input id='cords'>
+            <button id='submit'>Add ship!</button>
+        </form>
+    </div>
+    <ul>
+        <p>------------------------------------------------</p>
+        <p>Issues</p>
+        <li>Computer random select same cords to place ships</li>
+        <li>validation on form</li>
+        <li>AI does not apply any logic to game method</li>
+    </ul>
         <script src='./main.js'></script>
     </body>
 </html>
