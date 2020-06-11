@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet"  tyoe="text/css" href="book.css">
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+
 </head>
 
 <body>
@@ -16,6 +19,21 @@
     <input type="checkbox" id="read" name="read"><label for="read">Read?</label>
     <button id= "newBook" type="button" onclick="addBook()">Add book!</button>
     </form>
-    <script src="book.js"></script>
+        <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDgkXVhHH_v8gTQmdiHCuHsN-L0x9U9Y9E",
+            authDomain: "library-a0339.firebaseapp.com",
+            databaseURL: "https://library-a0339.firebaseio.com",
+            projectId: "library-a0339",
+            storageBucket: "library-a0339.appspot.com",
+            messagingSenderId: "601481968412",
+            appId: "1:601481968412:web:66099076d22583943998d9"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        </script>
+        <script src="book.js"></script>
 </body>
 </html>
