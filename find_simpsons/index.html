@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="app.css">
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+    </head>
+    <body>
+        <h1>Find the Simpsons characters</h1>
+        <label for="characters">Who are you looking for?</label>
+        <select name="characters" id='characters'>
+          <option value="Homer">Homer</option>
+          <option value="Homer2">Homer2</option>
+          <option value="Marge">Marge</option>
+          <option value="Bart">Bart</option>
+          <option value="Lisa">Lisa</option>
+        </select>
+        <button id='start'>Start!</button>
+        <div id="timer"></div>
+        <div id="content">
+            <img id='img' src='./simpsons.jpg' alt='simpsons image'>
+        </div>
+        <div id='highScoreContainer'>
+        <p>Highscores;</p>
+        <ul name='highScore' id='highScores'>
+        </ul>
+    </div>
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyCdOAvRsCq-uwXzZfEfKCxmXIILK-shgss",
+                authDomain: "findsimpsons-db287.firebaseapp.com",
+                databaseURL: "https://findsimpsons-db287.firebaseio.com",
+                projectId: "findsimpsons-db287",
+                storageBucket: "findsimpsons-db287.appspot.com",
+                messagingSenderId: "651868461927",
+                appId: "1:651868461927:web:7a06e1ceb0d22ab7c22dc2"
+
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+            //this is why this script is before the main one, so we can reference the variable "db"
+        </script>
+        <script src="app.js"></script>
+    </body>
+</html>

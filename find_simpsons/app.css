@@ -1,0 +1,17 @@
+.circles {
+    position: absolute;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+}
+
+#img {
+    position: absolute;
+}
+
+#highScoreContainer {
+    position: absolute;
+    left:80%;
+    width:auto;
+    height: auto;
+}
