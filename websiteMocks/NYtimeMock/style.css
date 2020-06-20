@@ -1,0 +1,95 @@
+body  {
+    box-sizing: border-box;
+    
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+    border: 1px solid transparent;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 99.3%;
+    position: fixed;
+    padding: 5px 5px 0px 5px;
+    border-bottom: lightgray 1px solid;
+    z-index: 1;
+    background-color: white;
+}
+
+.buttons {
+    background-color: transparent;
+    border: none;
+}
+
+.searchSettings {
+    color: transparent;
+}
+
+#logo {
+    height: auto;
+    width: 12%;
+}
+
+.icons {
+    height: 20px;
+    width: 20px;
+}
+
+.subSign {
+    background-color:rgb(86, 123, 149);
+    padding: 11px 12px 8px 12px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+}
+
+article {
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 150px auto;
+}
+
+article > h3 {
+    font-size: 2.5rem;
+}
+
+figure > figcaption {
+    width: 70%;
+    font-size: 10pt;
+}
+
+.articleText {
+    width: 50%;
+}
+
+.theory {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    border: solid pink;
+}
+
+.footer {
+    border: solid blue;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    width: 60%;
+	grid-template-columns: repeat(6, 1fr);
+	padding: 10px 10px 10px 30px;
+}
