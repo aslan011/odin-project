@@ -108,10 +108,6 @@ function addShip(e) {
   shipLimit -= 1;
   shipLength -= 1;
 
-  Array.from(document.getElementsByTagName('input')).forEach(tag => {
-    tag.value = '';
-  });
-
   document.getElementById(
     'remainingShips'
   ).textContent = `Add some Ships! ${shipLimit} remaining`;
@@ -121,8 +117,7 @@ function addShip(e) {
   ).textContent = `This ship length is ${shipLength}`;
   // eslint-disable-next-line prefer-destructuring
   const form = e.srcElement.form;
-  console.log(form);
-  const cords = form[1].value;
+  const cords = form[0].value;
   const cordsArray = cords.split(' ');
   Game.Player1.Ships.push(Ship(cordsArray));
   Game.Player1.placeShips();
@@ -138,6 +133,10 @@ function addShip(e) {
   }
   Game.Computer.Ships.push(Ship(shipCords));
   Game.Computer.placeShips();
+
+  Array.from(document.getElementsByTagName('input')).forEach(tag => {
+    tag.value = '';
+  });
 
   if (shipLimit === 0) {
     addDOMShips();
