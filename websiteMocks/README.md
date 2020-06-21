@@ -1,6 +1,6 @@
 ## Description
 
-Been having alot of fun (and pain) improving my CSS skills
+Been having alot of fun (and pain) improving my CSS skills by mocking other well known websites
 
 ## Learned
 
