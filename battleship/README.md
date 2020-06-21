@@ -2,7 +2,7 @@
 
 Created a battleship game where a user can verse a Computer and choose where they place their ships.
 
-# Technologies used
+## Technologies used
 
 * Webpack, Jest (for TTD) and making Javascript more modular using factories
 
