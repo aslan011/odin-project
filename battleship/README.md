@@ -5,8 +5,8 @@ Created a battleship game where a user can verse a Computer and choose where the
 ## In progress
 
 *Issues
-  *Computer can sometimes select same position to place ships
-  *No validation on cordinates when user is placing ships
+  **Computer can sometimes select same position to place ships
+  **No validation on cordinates when user is placing ships
   
 ## Future
 
