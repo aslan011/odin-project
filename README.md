@@ -1,4 +1,4 @@
-# Employers can look here to see my work :)
+# Employers can look here to see my work
 
 ## Synopsis
 
