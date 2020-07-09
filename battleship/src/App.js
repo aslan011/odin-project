@@ -3,7 +3,10 @@ import { Ship } from './factories/Ship';
 
 const PlayerGrid = document.getElementById('player');
 const ComputerGrid = document.getElementById('computer');
+const ships = Array.from(document.getElementsByClassName('ship'));
+const addedShips = [];
 
+let chosenShip;
 let Game = Player();
 let shipLimit = 4;
 let shipLength = 4;
@@ -62,27 +65,22 @@ function reset() {
   Array.from(ComputerGrid.childNodes).forEach(div => {
     div.classList.remove('hitShip', 'hitEmpty', 'containShip');
   });
-  document.getElementById('formDiv').style.visibility = 'visible';
   shipLimit = 4;
-  shipLength = 5;
-  document.getElementById(
-    'remainingShips'
-  ).textContent = `Add some Ships! ${shipLimit} remaining`;
+  shipLength = 4;
 }
 
 function updateShips() {
   const playerSunkShips = Array.from(Game.Computer.Ships).filter(
     ship => ship.sink() === true
   );
-
   const compSunkShips = Array.from(Game.Player1.Ships).filter(
     ship => ship.sink() === true
   );
 
-  if (playerSunkShips.length === 3) {
+  if (playerSunkShips.length === 4) {
     alert('you win!');
     reset();
-  } else if (compSunkShips.length === 3) {
+  } else if (compSunkShips.length === 4) {
     alert('you lose!');
     reset();
   }
@@ -104,23 +102,27 @@ const eventHandle = () => {
 };
 
 function addShip(e) {
+  addedShips.push(e.target.id);
+  PlayerGrid.classList.toggle('active');
   e.preventDefault();
+  const splitCord = e.target.id.split('');
+  const letter = splitCord[0];
+  const number = Number(splitCord[1]);
+  const cordsArray = [];
+  const length = Number(chosenShip.dataset.length);
+  for (let i = number; i < number + length; i++) {
+    const cord = String(letter + i);
+    cordsArray.push(cord);
+    Game.Player1.Ships.push(Ship(cordsArray));
+  }
+  Game.Player1.placeShips();
+  chosenShip.style.position = 'absolute';
+  chosenShip.style.left = `${e.clientX - 10}px`;
+  chosenShip.style.top = `${e.y - 30}px `;
+  chosenShip.setAttribute('draggable', false);
+
   shipLimit -= 1;
   shipLength -= 1;
-
-  document.getElementById(
-    'remainingShips'
-  ).textContent = `Add some Ships! ${shipLimit} remaining`;
-
-  document.getElementById(
-    'length'
-  ).textContent = `This ship length is ${shipLength}`;
-  // eslint-disable-next-line prefer-destructuring
-  const form = e.srcElement.form;
-  const cords = form[0].value;
-  const cordsArray = cords.split(' ');
-  Game.Player1.Ships.push(Ship(cordsArray));
-  Game.Player1.placeShips();
 
   const randomNum = Math.floor(Math.random() * 10) + 1;
   const randomchar = Math.floor(Math.random() * 10) + 65;
@@ -128,23 +130,48 @@ function addShip(e) {
 
   const shipCords = [];
 
-  for (let i = 0; i < shipLength; i++) {
+  for (let i = 0; i <= shipLength; i++) {
     shipCords.push(randomLetter + (randomNum + i));
   }
   Game.Computer.Ships.push(Ship(shipCords));
   Game.Computer.placeShips();
-
-  Array.from(document.getElementsByTagName('input')).forEach(tag => {
-    tag.value = '';
-  });
+  addDOMShips();
 
   if (shipLimit === 0) {
     addDOMShips();
-    document.getElementById('formDiv').style.visibility = 'hidden';
     eventHandle();
   }
 }
 
-document.getElementById('submit').addEventListener('click', e => {
-  addShip(e);
+PlayerGrid.addEventListener('dragenter', () => {
+  PlayerGrid.classList.toggle('active');
 });
+
+PlayerGrid.addEventListener('dragexit', () => {
+  PlayerGrid.classList.toggle('active');
+});
+
+ships.forEach(ship => {
+  ship.addEventListener('dragstart', e => {
+    e.dataTransfer.setData('text/plain', e.target.id);
+    const id = e.dataTransfer.getData('text');
+    chosenShip = document.getElementById(id);
+    if (addedShips.includes(id)) {
+      e.preventDefault();
+    } else {
+      addedShips.push(id);
+    }
+  });
+});
+
+ships.forEach(ship => {
+  ship.addEventListener('dragend', e => {
+    e.preventDefault();
+  });
+});
+
+PlayerGrid.addEventListener('dragover', e => {
+  e.preventDefault();
+});
+
+PlayerGrid.addEventListener('drop', addShip);

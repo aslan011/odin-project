@@ -14,21 +14,19 @@
             <div id='computer'>
             </div>
         </div>
-        <div id='formDiv'>
-            <p id='remainingShips'>Add some Ships! 4 remaining...</p>
-        <form>
-            <p id='length'>This ship length is 4</p>
-            <label for='cords'>Cordinates</label>
-            <input id='cords'>
-            <button id='submit'>Add ship!</button>
-        </form>
-    </div>
+        <div id='ships'>
+            <img class='ship' id='ship1' draggable="true" data-length="4" src='./ship.png'>
+            <img class='ship' id='ship2' draggable="true" data-length="3" src='./ship.png'>
+            <img class='ship' id='ship3' draggable="true" data-length="2" src='./ship.png'>
+            <img class='ship' id='ship4' draggable="true" data-length="1" src='./ship.png'>
+        </div>
     <ul>
         <p>------------------------------------------------</p>
         <p>Issues</p>
         <li>Computer random select same cords to place ships</li>
-        <li>validation on form</li>
+        <li>Computer can choose cords that overflow </li>
         <li>AI does not apply any logic to game method</li>
+        <li>Styling!</li>
     </ul>
         <script src='./main.js'></script>
     </body>
