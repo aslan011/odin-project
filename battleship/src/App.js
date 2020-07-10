@@ -110,14 +110,19 @@ function addShip(e) {
   const number = Number(splitCord[1]);
   const cordsArray = [];
   const length = Number(chosenShip.dataset.length);
-  for (let i = number; i < number + length; i++) {
-    const cord = String(letter + i);
+  let cord = 0;
+  for (let i = number - 1; i < number - 1 + length; i++) {
+    if (length <= 2) {
+      cord = String(letter + (i + 1));
+    } else {
+      cord = String(letter + i);
+    }
     cordsArray.push(cord);
     Game.Player1.Ships.push(Ship(cordsArray));
   }
   Game.Player1.placeShips();
   chosenShip.style.position = 'absolute';
-  chosenShip.style.left = `${e.clientX - 10}px`;
+  chosenShip.style.left = `${e.clientX - length * 12}px`;
   chosenShip.style.top = `${e.y - 30}px `;
   chosenShip.setAttribute('draggable', false);
 
